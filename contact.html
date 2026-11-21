@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#e33416" />
+  <meta name="description" content="Chopwell Kitchen — Contact us. Order via WhatsApp, Call, or Chowdeck. Find our location and operating hours." />
+  <title>Chopwell Kitchen | Contact Us</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,700;1,700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ===== BASE & VARIABLES ===== */
+    :root {
+      --primary: #e33416;
+      --primary-light: #b91c1c;
+      --gold: #f97316;
+      --gold-bright: #ffd43b;
+      --dark-bg: #111111;
+      --light-bg: #fff8ed;
+      --text-dark: #27140d;
+      --text-muted: #715447;
+      --border-color: #f0c9a6;
+      --success: #25d366;
+      --shadow: 0 12px 32px rgba(121, 42, 13, .1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--light-bg);
+      background-image: radial-gradient(#f3c7a7 .7px, transparent .7px);
+      background-size: 16px 16px;
+      color: var(--text-dark);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ===== HEADER ===== */
+    .site-header {
+      width: min(1200px, calc(100% - 32px));
+      margin: 12px auto 0;
+      padding: 12px 20px;
+      border: 1px solid rgba(25, 25, 25, .12);
+      border-radius: 20px;
+      background: rgba(255, 248, 237, .94);
+      box-shadow: 0 8px 24px rgba(25, 25, 25, .07);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 12px;
+      z-index: 100;
+    }
+
+    .logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      color: var(--text-dark);
+      letter-spacing: 1px;
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .logo span {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--primary);
+      font-weight: 700;
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: var(--text-dark);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-light);
+    }
+
+    .header-order-btn {
+      background-color: var(--primary);
+      color: white !important;
+      padding: 8px 20px;
+      border-radius: 12px;
+      font-weight: 700 !important;
+      font-size: 0.85rem !important;
+      transition: background 0.2s, transform 0.2s !important;
+      box-shadow: 3px 3px 0 var(--text-dark);
+    }
+
+    .header-order-btn:hover {
+      background-color: var(--primary-light);
+      transform: translateY(-1px);
+    }
+
+    .cart-trigger {
+      display: inline-flex; align-items: center; gap: 8px; border: 0; cursor: pointer;
+      padding: 9px 15px; border-radius: 12px; color: white; background: var(--primary);
+      font: 700 .88rem 'DM Sans', sans-serif; box-shadow: 3px 3px 0 var(--text-dark);
+    }
+    .cart-trigger .count { min-width: 22px; height: 22px; display: grid; place-items: center; padding: 0 5px; border-radius: 50%; background: var(--gold-bright); color: var(--text-dark); }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--text-dark);
+      cursor: pointer;
+    }
+
+    /* ===== PAGE HERO ===== */
+    .page-hero {
+      width: min(1200px, calc(100% - 32px));
+      margin: 16px auto 0;
+      padding: clamp(40px, 6vw, 70px) 6%;
+      border: 2px solid var(--text-dark);
+      border-radius: 32px;
+      background-color: var(--primary);
+      background-image: linear-gradient(120deg, #c41811, #ed4c16 58%, #ff981f);
+      color: white;
+      text-align: center;
+      box-shadow: 8px 8px 0 var(--text-dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: "📞";
+      position: absolute;
+      font-size: 200px;
+      opacity: 0.1;
+      top: -20px;
+      right: -20px;
+      transform: rotate(15deg);
+      pointer-events: none;
+    }
+
+    .page-hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 7vw, 5rem);
+      letter-spacing: 2px;
+      line-height: 1;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+      position: relative;
+      z-index: 2;
+    }
+
+    .page-hero p {
+      font-size: 1.1rem;
+      color: #fce7e0;
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ===== CONTACT SECTION ===== */
+    .contact-section {
+      padding: 60px 5%;
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    /* Contact Info Cards */
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contact-card {
+      background: white;
+      border: 1.5px solid var(--text-dark);
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 4px 4px 0 var(--text-dark);
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      transition: transform 0.2s;
+    }
+
+    .contact-card:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0 var(--text-dark);
+    }
+
+    .contact-card:nth-child(1) { background: #fff0df; }
+    .contact-card:nth-child(2) { background: #fff3b8; }
+    .contact-card:nth-child(3) { background: #e9f7ce; }
+
+    .contact-icon {
+      font-size: 2rem;
+      line-height: 1;
+      flex-shrink: 0;
+      background: white;
+      width: 60px;
+      height: 60px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      border: 1.5px solid var(--text-dark);
+    }
+
+    .contact-details h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--text-dark);
+      margin-bottom: 5px;
+    }
+
+    .contact-details p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+
+    .contact-details a {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      border: 1.5px solid var(--text-dark);
+      box-shadow: 2px 2px 0 var(--text-dark);
+      transition: all 0.2s;
+    }
+
+    .contact-details a:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: 3px 3px 0 var(--text-dark);
+      background: var(--primary-light);
+    }
+
+    .contact-details a.whatsapp-link {
+      background: var(--success);
+    }
+    .contact-details a.whatsapp-link:hover {
+      background: #1ebe5d;
+    }
+
+    /* Contact Form */
+    .contact-form-wrapper {
+      background: white;
+      border: 2px solid var(--text-dark);
+      border-radius: 24px;
+      padding: 35px;
+      box-shadow: 6px 6px 0 var(--text-dark);
+    }
+
+    .contact-form-wrapper h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+    }
+
+    .contact-form-wrapper > p {
+      color: var(--text-muted);
+      margin-bottom: 25px;
+      font-size: 0.95rem;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      color: var(--text-dark);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1.5px solid var(--text-dark);
+      border-radius: 10px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      background: var(--light-bg);
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      background: white;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 15px;
+      background: var(--gold-bright);
+      color: var(--text-dark);
+      border: 2px solid var(--text-dark);
+      border-radius: 12px;
+      font: 700 1rem 'DM Sans', sans-serif;
+      cursor: pointer;
+      box-shadow: 3px 3px 0 var(--text-dark);
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .submit-btn:hover {
+      background: #fcd34d;
+      transform: translate(-1px, -1px);
+      box-shadow: 4px 4px 0 var(--text-dark);
+    }
+
+    /* ===== FOOTER ===== */
+    .site-footer {
+      background-color: var(--dark-bg);
+      color: #aaa;
+      padding: 50px 5% 30px;
+      margin-top: 60px;
+      border-radius: 30px 30px 0 0;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      color: var(--gold-bright);
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .footer-brand p {
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+
+    .footer-links h3, .footer-contact h3 {
+      color: white;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .footer-links a {
+      display: block;
+      color: #aaa;
+      margin-bottom: 10px;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-bright);
+    }
+
+    .footer-contact p {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid #333;
+      padding-top: 20px;
+      font-size: 0.8rem;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; position: absolute; top: calc(100% + 8px); left: 16px; right: 16px; flex-direction: column; align-items: stretch; gap: 0; padding: 8px; border: 1px solid var(--border-color); border-radius: 16px; background: #fffaf2; box-shadow: var(--shadow); }
+      .nav-links.mobile-open { display: flex; }
+      .nav-links a { padding: 12px; }
+      .cart-trigger { display: none; }
+      .mobile-menu-btn { display: block; }
+      .page-hero { border-radius: 24px; box-shadow: 5px 5px 0 var(--text-dark); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="index.html" class="logo">
+      CHOPWELL
+      <span>Kitchen Spot</span>
+    </a>
+    <nav class="nav-links" id="siteNav">
+      <a href="menu.html">Menu</a>
+      <a href="juices.html">Juices</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" style="color: var(--primary);">Contact</a>
+      <a href="menu.html" class="header-order-btn">Order Now</a>
+    </nav>
+    <button class="cart-trigger" id="cartTrigger" type="button" aria-label="Open shopping cart">Cart <span class="count" id="headerCartCount">0</span></button>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <h1>GET IN TOUCH</h1>
+    <p>Have a question, a special request, or want to place a large order? We're just a message away.</p>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-section">
+    <div class="contact-grid">
+      
+      <!-- Contact Info Cards -->
+      <div class="contact-info">
+        
+        <div class="contact-card">
+          <div class="contact-icon">📞</div>
+          <div class="contact-details">
+            <h3>Call Us</h3>
+            <p>Speak directly with our team for quick orders and enquiries.</p>
+            <a href="tel:+2347012535275">0701 253 5275</a>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon">💬</div>
+          <div class="contact-details">
+            <h3>WhatsApp</h3>
+            <p>Send us a message on WhatsApp to place your order or ask a question.</p>
+            <a href="https://wa.me/2347012535275?text=Hello%20Chopwell%20Kitchen%2C%20I%20have%20an%20enquiry." target="_blank" rel="noopener" class="whatsapp-link">Chat on WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon">🛵</div>
+          <div class="contact-details">
+            <h3>Chowdeck</h3>
+            <p>We are also available on Chowdeck for fast and reliable delivery.</p>
+            <a href="https://chowdeck.com" target="_blank" rel="noopener">Find us on Chowdeck</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form-wrapper">
+        <h2>Send a Message</h2>
+        <p>Fill out the form below and we'll get back to you as soon as possible. Or, click the button to send us a direct WhatsApp message!</p>
+        
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" placeholder="e.g. Adebayo Johnson" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="e.g. 08012345678" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" placeholder="Tell us what you'd like to order or ask..." required></textarea>
+          </div>
+          
+          <button type="submit" class="submit-btn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Send via WhatsApp
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contact-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h2>CHOPWELL KITCHEN</h2>
+        <p>Unlimited Taste. Authentic Nigerian Flavors. Made with love and served fresh.</p>
+      </div>
+      
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <a href="menu.html">Our Menu</a>
+        <a href="juices.html">Fresh Juices</a>
+        <a href="about.html">About Us</a>
+      </div>
+      
+      <div class="footer-contact">
+        <h3>Order With Us</h3>
+        <p>
+          <span>📞</span> 
+          <a href="tel:+2347012535275" style="color: #aaa;">07012535275</a>
+        </p>
+        <p>
+          <span>💬</span> 
+          <a href="https://wa.me/2347012535275" style="color: #aaa;" target="_blank" rel="noopener">WhatsApp Us</a>
+        </p>
+        <p>
+          <span>🛵</span> Available on Chowdeck
+        </p>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2024 Chopwell Kitchen Spot. All rights reserved.</p>
+      <p style="margin-top: 5px; color: var(--gold-bright);">"Eat good food 🍱 Omo, the vegetables give life!"</p>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // Mobile Menu Toggle
+    document.getElementById("mobileMenuBtn").addEventListener("click", event => {
+      const open = document.getElementById("siteNav").classList.toggle("mobile-open");
+      event.currentTarget.setAttribute("aria-expanded", String(open));
+      event.currentTarget.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    });
+
+    // Contact Form to WhatsApp
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const message = document.getElementById("message").value.trim();
+      
+      const text = `Hello Chopwell Kitchen!%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A%0A*Message:*%0A${encodeURIComponent(message)}`;
+      
+      window.open(`https://wa.me/2347012535275?text=${text}`, "_blank", "noopener,noreferrer");
+      
+      // Optional: Reset form after sending
+      this.reset();
+    });
+
+    // Update Cart Count from LocalStorage (if you have a shared cart system)
+    // For this static page, we'll just show 0 or retrieve from localStorage if available
+    const savedCart = localStorage.getItem('chopwellCart');
+    if (savedCart) {
+      try {
+        const cartData = JSON.parse(savedCart);
+        const totalItems = cartData.reduce((sum, item) => sum + item.quantity, 0);
+        document.getElementById("headerCartCount").textContent = totalItems;
+      } catch (e) {
+        console.log("Cart data error");
+      }
+    }
+  </script>
+</body>
+</html>

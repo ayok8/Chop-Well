@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#e33416" />
+  <meta name="description" content="Chopwell Kitchen — Authentic Nigerian meals, all fruit juices available. Unlimited Taste. Order now via WhatsApp, Call, or Chowdeck." />
+  <title>Chopwell Kitchen | Menu</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,700;1,700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ===== BASE & VARIABLES ===== */
+    :root {
+      --primary: #e33416;
+      --primary-light: #b91c1c;
+      --gold: #f97316;
+      --gold-bright: #ffd43b;
+      --dark-bg: #111111;
+      --dark-panel: #1c1c1c;
+      --light-bg: #fff8ed;
+      --text-dark: #27140d;
+      --text-muted: #715447;
+      --text-light: #f5f5f5;
+      --border-color: #f0c9a6;
+      --success: #25d366;
+      --shadow: 0 12px 32px rgba(121, 42, 13, .1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--light-bg);
+      background-image: radial-gradient(#f3c7a7 .7px, transparent .7px);
+      background-size: 16px 16px;
+      color: var(--text-dark);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ===== HEADER ===== */
+    .site-header {
+      width: min(1200px, calc(100% - 32px));
+      margin: 12px auto 0;
+      padding: 12px 20px;
+      border: 1px solid rgba(25, 25, 25, .12);
+      border-radius: 20px;
+      background: rgba(255, 248, 237, .94);
+      box-shadow: 0 8px 24px rgba(25, 25, 25, .07);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 12px;
+      z-index: 100;
+    }
+
+    .logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      color: var(--text-dark);
+      letter-spacing: 1px;
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .logo span {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--primary);
+      font-weight: 700;
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: var(--text-dark);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-light);
+    }
+
+    .header-order-btn {
+      background-color: var(--primary);
+      color: white !important;
+      padding: 8px 20px;
+      border-radius: 12px;
+      font-weight: 700 !important;
+      font-size: 0.85rem !important;
+      transition: background 0.2s, transform 0.2s !important;
+      box-shadow: 3px 3px 0 var(--text-dark);
+    }
+
+    .header-order-btn:hover {
+      background-color: var(--primary-light);
+      transform: translateY(-1px);
+    }
+
+    .cart-trigger {
+      display: inline-flex; align-items: center; gap: 8px; border: 0; cursor: pointer;
+      padding: 9px 15px; border-radius: 12px; color: white; background: var(--primary);
+      font: 700 .88rem 'DM Sans', sans-serif; box-shadow: 3px 3px 0 var(--text-dark);
+    }
+    .cart-trigger .count { min-width: 22px; height: 22px; display: grid; place-items: center; padding: 0 5px; border-radius: 50%; background: var(--gold-bright); color: var(--text-dark); }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--text-dark);
+      cursor: pointer;
+    }
+
+    /* ===== PAGE HERO ===== */
+    .page-hero {
+      width: min(1200px, calc(100% - 32px));
+      margin: 16px auto 0;
+      padding: clamp(40px, 6vw, 70px) 6%;
+      border: 2px solid var(--text-dark);
+      border-radius: 32px;
+      background-color: var(--primary);
+      background-image: linear-gradient(120deg, #c41811, #ed4c16 58%, #ff981f);
+      color: white;
+      text-align: center;
+      box-shadow: 8px 8px 0 var(--text-dark);
+    }
+
+    .page-hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 7vw, 5rem);
+      letter-spacing: 2px;
+      line-height: 1;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .page-hero p {
+      font-size: 1.1rem;
+      color: #fce7e0;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ===== SECTIONS GENERAL ===== */
+    .section {
+      padding: 40px 5% 70px;
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: left;
+      margin-bottom: 28px;
+    }
+
+    .section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      letter-spacing: -1px;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      max-width: 600px;
+    }
+
+    /* ===== MENU CATEGORIES ===== */
+    .menu-categories {
+      display: flex;
+      justify-content: flex-start;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .category-btn {
+      background: white;
+      border: 1.5px solid var(--text-dark);
+      padding: 8px 20px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text-dark);
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: 2px 2px 0 var(--text-dark);
+    }
+
+    .category-btn.active, .category-btn:hover {
+      background-color: var(--primary);
+      color: white;
+      border-color: var(--text-dark);
+    }
+
+    /* ===== PRODUCT GRID ===== */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      border: 1.5px solid var(--text-dark);
+      box-shadow: 4px 4px 0 var(--text-dark);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .product-card:nth-child(5n + 1) { background: #fff0df; }
+    .product-card:nth-child(5n + 3) { background: #fff3b8; }
+
+    .product-card:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 7px 7px 0 var(--text-dark);
+    }
+
+    .product-image {
+      height: 200px;
+      position: relative;
+      overflow: hidden;
+      background-color: #eee;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.05);
+    }
+
+    .product-tag {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background-color: var(--gold-bright);
+      color: var(--text-dark);
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 8px;
+      letter-spacing: 0.5px;
+      border: 1px solid var(--text-dark);
+      z-index: 2;
+    }
+
+    .product-info {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .product-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 10px;
+      gap: 10px;
+    }
+
+    .product-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.3;
+    }
+
+    .product-price {
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 1.1rem;
+      white-space: nowrap;
+    }
+
+    .product-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      flex: 1;
+    }
+
+    .product-action {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(25, 25, 25, 0.1);
+      padding-top: 15px;
+    }
+
+    .product-cat {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .add-btn {
+      background: #fff;
+      border: 1.5px solid var(--text-dark);
+      color: var(--text-dark);
+      padding: 8px 15px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .add-btn:hover {
+      background-color: var(--gold-bright);
+      color: var(--text-dark);
+      border-color: var(--text-dark);
+    }
+
+    /* ===== FOOTER ===== */
+    .site-footer {
+      background-color: var(--dark-bg);
+      color: #aaa;
+      padding: 50px 5% 30px;
+      margin-top: 60px;
+      border-radius: 30px 30px 0 0;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      color: var(--gold-bright);
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .footer-brand p {
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+
+    .footer-links h3, .footer-contact h3 {
+      color: white;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .footer-links a {
+      display: block;
+      color: #aaa;
+      margin-bottom: 10px;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-bright);
+    }
+
+    .footer-contact p {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid #333;
+      padding-top: 20px;
+      font-size: 0.8rem;
+    }
+
+    /* ===== CART DRAWER ===== */
+    .cart-backdrop { position: fixed; inset: 0; z-index: 200; background: rgba(28,15,10,.56); opacity: 0; visibility: hidden; transition: .25s; }
+    .cart-backdrop.open { opacity: 1; visibility: visible; }
+    .cart-drawer {
+      position: fixed; z-index: 201; top: 0; right: 0; width: min(460px, 100%); height: 100dvh;
+      display: flex; flex-direction: column; padding: 24px; background: #fffaf2;
+      border-left: 2px solid var(--text-dark); box-shadow: -12px 0 40px rgba(35,18,9,.2);
+      transform: translateX(105%); transition: transform .3s cubic-bezier(.2,.8,.2,1);
+    }
+    .cart-drawer.open { transform: translateX(0); }
+    .cart-head, .cart-line, .cart-total-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .cart-head { padding-bottom: 18px; border-bottom: 1px solid var(--border-color); }
+    .cart-head h2 { font: 700 1.6rem 'Playfair Display', serif; }
+    .cart-close { width: 40px; height: 40px; border: 1px solid var(--border-color); border-radius: 10px; background: white; font-size: 1.4rem; cursor: pointer; }
+    .cart-items { flex: 1; overflow-y: auto; padding: 12px 0; }
+    .cart-empty { padding: 42px 10px; color: var(--text-muted); text-align: center; }
+    .cart-line { padding: 14px 0; border-bottom: 1px solid var(--border-color); }
+    .cart-line-info { flex: 1; }
+    .cart-line-info strong { display: block; }
+    .cart-line-info small { color: var(--text-muted); }
+    .quantity-control { display: flex; align-items: center; gap: 9px; }
+    .quantity-control button { width: 30px; height: 30px; border: 1px solid var(--border-color); border-radius: 9px; background: white; cursor: pointer; font-weight: 700; }
+    .cart-footer { padding-top: 16px; border-top: 1px solid var(--border-color); }
+    .cart-total-row { margin-bottom: 16px; font-size: 1.1rem; font-weight: 800; }
+    .checkout-btn { width: 100%; padding: 15px; border: 0; border-radius: 13px; background: var(--primary); color: white; font: 700 1rem 'DM Sans', sans-serif; cursor: pointer; box-shadow: 3px 3px 0 var(--text-dark); }
+    .checkout-btn:disabled { opacity: .5; cursor: not-allowed; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; position: absolute; top: calc(100% + 8px); left: 16px; right: 16px; flex-direction: column; align-items: stretch; gap: 0; padding: 8px; border: 1px solid var(--border-color); border-radius: 16px; background: #fffaf2; box-shadow: var(--shadow); }
+      .nav-links.mobile-open { display: flex; }
+      .nav-links a { padding: 12px; }
+      .cart-trigger { display: none; }
+      .mobile-menu-btn { display: block; }
+      .page-hero { border-radius: 24px; box-shadow: 5px 5px 0 var(--text-dark); }
+      .section-header { text-align: center; }
+      .section-header p { margin: 0 auto; }
+      .menu-categories { justify-content: center; }
+      .product-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="#" class="logo">
+      CHOPWELL
+      <span>Kitchen Spot</span>
+    </a>
+    <nav class="nav-links" id="siteNav">
+      <a href="menu.html">Menu</a>
+      <a href="juices.html">Juices</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="menu.html" class="header-order-btn">Order Now</a>
+    </nav>
+    <button class="cart-trigger" id="cartTrigger" type="button" aria-label="Open shopping cart">Cart <span class="count" id="headerCartCount">0</span></button>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <h1>OUR MENU</h1>
+    <p>Authentic Nigerian flavours, homemade goodness, and freshly squeezed fruit juices — prepared with love and served fresh.</p>
+  </section>
+
+  <!-- MENU SECTION -->
+  <section class="section" id="menu">
+    <div class="section-header">
+      <h2>Explore Our Dishes</h2>
+      <p>From comforting Nigerian classics to tasty bites. Everything is available and made fresh daily.</p>
+    </div>
+
+    <!-- Category Filters -->
+    <div class="menu-categories">
+      <button class="category-btn active" data-category="All">All Items</button>
+      <button class="category-btn" data-category="Soups">Soups</button>
+      <button class="category-btn" data-category="Stew">Stew</button>
+      <button class="category-btn" data-category="Sides">Sides</button>
+      <button class="category-btn" data-category="Juices">Juices</button>
+      <button class="category-btn" data-category="Other">Other</button>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="product-grid" id="productGrid">
+      <!-- Products will be injected here by JavaScript -->
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contact">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h2>CHOPWELL KITCHEN</h2>
+        <p>Unlimited Taste. Authentic Nigerian Flavors. Made with love and served fresh.</p>
+      </div>
+      
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <a href="menu.html">Our Menu</a>
+        <a href="juices.html">Fresh Juices</a>
+        <a href="about.html">About Us</a>
+      </div>
+      
+      <div class="footer-contact">
+        <h3>Order With Us</h3>
+        <p>
+          <span>📞</span> 
+          <a href="tel:+2347012535275" style="color: #aaa;">07012535275</a>
+        </p>
+        <p>
+          <span>💬</span> 
+          <a href="https://wa.me/2347012535275" style="color: #aaa;" target="_blank" rel="noopener">WhatsApp Us</a>
+        </p>
+        <p>
+          <span>🛵</span> Available on Chowdeck
+        </p>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2024 Chopwell Kitchen Spot. All rights reserved.</p>
+      <p style="margin-top: 5px; color: var(--gold-bright);">"Eat good food 🍱 Omo, the vegetables give life!"</p>
+    </div>
+  </footer>
+
+  <!-- CART DRAWER -->
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle" aria-hidden="true">
+    <div class="cart-head"><h2 id="cartTitle">Your Cart</h2><button class="cart-close" id="cartClose" type="button" aria-label="Close cart">×</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer"><div class="cart-total-row"><span>Subtotal</span><span id="cartTotal">₦0</span></div><button class="checkout-btn" id="checkoutBtn" type="button" disabled>Checkout on WhatsApp</button></div>
+  </aside>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // Combined Menu Data from provided images and HTML
+    const products = [
+      // --- SOUPS (from 02 Kitchen images) ---
+      {id:"oha-soup", name:"Oha Soup", category:"Soups", price:39000, description:"Rich traditional Oha soup prepared with fresh ingredients.", tag:"FRESHLY PREPARED", image:"https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80"},
+      {id:"bitterleaf-soup", name:"Bitterleaf Soup", category:"Soups", price:39000, description:"Authentic Bitterleaf soup, rich and satisfying.", tag:"FRESHLY PREPARED", image:"https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80"},
+      {id:"assorted-egusi", name:"Assorted Egusi Soup", category:"Soups", price:38000, description:"Egusi soup loaded with assorted meat.", tag:"FRESHLY PREPARED", image:"https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80"},
+      {id:"goat-egusi", name:"Goat Meat Egusi Soup", category:"Soups", price:38000, description:"Rich egusi soup prepared with tender goat meat.", tag:"FRESHLY PREPARED", image:"https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80"},
+      {id:"goat-white-soup", name:"Goat Meat White Soup", category:"Soups", price:39000, description:"Ofe Nsala - Traditional white soup with goat meat.", tag:"FRESHLY PREPARED", image:"https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80"},
+      {id:"okro-soup", name:"Okro Soup", category:"Soups", price:35000, description:"Fresh okro soup, perfectly prepared.", tag:"FRESHLY PREPARED", image:"https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80"},
+      {id:"ogbono-soup", name:"Ogbono Soup", category:"Soups", price:39000, description:"Comforting, flavourful ogbono soup made with care.", tag:"TRADITIONAL", image:"https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80"},
+      {id:"vegetable-soup", name:"Vegetable Soup", category:"Soups", price:39000, description:"A rich, hearty Nigerian classic with your choice of protein.", tag:"HOUSE FAVOURITE", image:"https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80"},
+      {id:"banga-soup", name:"Banga Soup with Catfish", category:"Soups", price:40000, description:"Rich palm nut soup with fresh catfish.", tag:"FRESHLY PREPARED", image:"https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80"},
+
+      // --- STEWS / SAUCE (from 02 Kitchen images) ---
+      {id:"ofe-akwu", name:"Ofe Akwu Stew", category:"Stew", price:30000, description:"With goatmeat/beef mix. Rich and flavourful.", tag:"FRESHLY PREPARED", image:"https://images.unsplash.com/photo-1476124369491-e7add3f3965e?auto=format&fit=crop&w=800&q=80"},
+      {id:"assorted-ofe-akwu", name:"Assorted Ofe Akwu Stew", category:"Stew", price:38000, description:"Rich Ofe Akwu stew with assorted meat.", tag:"FRESHLY PREPARED", image:"https://images.unsplash.com/photo-1476124369491-e7add3f3965e?auto=format&fit=crop&w=800&q=80"},
+      {id:"assorted-buka", name:"Assorted Buka Stew", category:"Stew", price:39000, description:"Hearty Buka style stew with assorted meat.", tag:"FRESHLY PREPARED", image:"https://images.unsplash.com/photo-1476124369491-e7add3f3965e?auto=format&fit=crop&w=800&q=80"},
+      {id:"beef-goat-fish", name:"Beef/Goatmeat Mix Stew with Fried Fish", category:"Stew", price:39000, description:"A delicious mix of beef, goat meat, and fried fish.", tag:"FRESHLY PREPARED", image:"https://images.unsplash.com/photo-1476124369491-e7add3f3965e?auto=format&fit=crop&w=800&q=80"},
+      {id:"ice-chicken-stew", name:"Ice Chicken Stew", category:"Stew", price:40000, description:"Flavourful chicken stew.", tag:"FRESHLY PREPARED", image:"https://images.unsplash.com/photo-1476124369491-e7add3f3965e?auto=format&fit=crop&w=800&q=80"},
+      {id:"catfish-stew", name:"Catfish Stew", category:"Stew", price:40000, description:"Fresh catfish stew, rich and spicy.", tag:"FRESHLY PREPARED", image:"https://images.unsplash.com/photo-1476124369491-e7add3f3965e?auto=format&fit=crop&w=800&q=80"},
+      {id:"local-vegetable", name:"Local Vegetable Sauce", category:"Stew", price:38000, description:"Traditional local vegetable sauce.", tag:"FRESHLY PREPARED", image:"https://images.unsplash.com/photo-1476124369491-e7add3f3965e?auto=format&fit=crop&w=800&q=80"},
+      {id:"fish-sauce", name:"Fish Sauce", category:"Stew", price:39000, description:"Rich and tasty fish sauce.", tag:"FRESHLY PREPARED", image:"https://images.unsplash.com/photo-1476124369491-e7add3f3965e?auto=format&fit=crop&w=800&q=80"},
+      {id:"chicken-sauce", name:"Chicken Sauce", category:"Stew", price:39000, description:"Flavourful chicken sauce.", tag:"FRESHLY PREPARED", image:"https://images.unsplash.com/photo-1476124369491-e7add3f3965e?auto=format&fit=crop&w=800&q=80"},
+
+      // --- SIDES (from original HTML and 02 Kitchen Rice Menu) ---
+      {id:"rice-beans", name:"Rice and Beans", category:"Sides", price:2000, description:"A satisfying everyday favourite, simply delicious.", tag:"COMFORT FOOD", image:"https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80"},
+      {id:"party-jollof", name:"Party Jollof Rice", category:"Sides", price:3500, description:"Smokey, party-style Nigerian jollof rice cooked to perfection.", tag:"POPULAR", image:"https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80"},
+      {id:"signature-fried-rice", name:"Signature Fried Rice (1L)", category:"Sides", price:35000, description:"Rich and flavourful signature fried rice.", tag:"BOWL MENU", image:"https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=800&q=80"},
+      {id:"smokey-party-jollof", name:"Smokey Party Jollof Rice (1L)", category:"Sides", price:30000, description:"Smokey and delicious party jollof.", tag:"BOWL MENU", image:"https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80"},
+      {id:"basmati-jollof", name:"Basmati Jollof Rice (1L)", category:"Sides", price:38000, description:"Premium basmati rice cooked jollof style.", tag:"BOWL MENU", image:"https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80"},
+      {id:"signature-asun-rice", name:"Signature Asun Rice (1L)", category:"Sides", price:38000, description:"Spicy Asun (peppered goat meat) rice.", tag:"BOWL MENU", image:"https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80"},
+      {id:"signature-asun-jollof", name:"Signature Asun Jollof Rice (1L)", category:"Sides", price:38000, description:"Jollof rice topped with spicy Asun.", tag:"BOWL MENU", image:"https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80"},
+      {id:"signature-coconut-rice", name:"Signature Coconut Rice (1L)", category:"Sides", price:38000, description:"Rich and creamy coconut rice.", tag:"BOWL MENU", image:"https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80"},
+      {id:"signature-basmati-native", name:"Signature Basmati Native Rice (1L)", category:"Sides", price:38000, description:"Basmati rice cooked native style.", tag:"BOWL MENU", image:"https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80"},
+      {id:"normal-grain-palm-oil", name:"Normal Grain Native Palm Oil Rice (1L)", category:"Sides", price:30000, description:"Traditional palm oil rice.", tag:"BOWL MENU", image:"https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80"},
+
+      // --- JUICES (from original HTML) ---
+      {id:"watermelon-juice", name:"Watermelon Juice", category:"Juices", price:2700, description:"Refreshing watermelon juice, freshly prepared.", tag:"ALL FRUITS AVAILABLE", image:"https://images.unsplash.com/photo-1525385133512-2f3bdd039054?auto=format&fit=crop&w=800&q=80"},
+      {id:"orange-juice", name:"Orange Juice", category:"Juices", price:2800, description:"Bright, citrusy orange juice for a refreshing boost.", tag:"ALL FRUITS AVAILABLE", image:"https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=800&q=80"},
+      {id:"pineapple-juice", name:"Pineapple Juice", category:"Juices", price:3000, description:"Sweet and tangy pineapple goodness in every sip.", tag:"ALL FRUITS AVAILABLE", image:"https://images.unsplash.com/photo-1550258987-190a2d41a8ba?auto=format&fit=crop&w=800&q=80"},
+      {id:"beetroot-juice", name:"Beetroot Juice", category:"Juices", price:3000, description:"Freshly prepared beetroot juice with earthy sweetness.", tag:"ALL FRUITS AVAILABLE", image:"https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=800&q=80"},
+
+      // --- OTHER (from original HTML) ---
+      {id:"pizza", name:"Pizza", category:"Other", price:18000, description:"A delicious pizza to share or enjoy all to yourself.", tag:"TREAT YOURSELF", image:"https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80"},
+      {id:"pepper-chicken", name:"Pepper Chicken", category:"Other", price:10000, description:"Peppery, flavour-packed chicken. Portion enough for two.", tag:"ENOUGH FOR 2", image:"https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=800&q=80"}
+    ];
+
+    let currentCategory = "All";
+    const cart = new Map();
+
+    const productGrid = document.getElementById("productGrid");
+    const categoryBtns = document.querySelectorAll(".category-btn");
+    const cartCountEl = document.getElementById("cartCount");
+    const floatingCart = document.getElementById("floatingCart");
+    const cartDrawer = document.getElementById("cartDrawer");
+    const cartBackdrop = document.getElementById("cartBackdrop");
+    const cartItemsEl = document.getElementById("cartItems");
+    const cartTotalEl = document.getElementById("cartTotal");
+    const checkoutBtn = document.getElementById("checkoutBtn");
+
+    // Format Currency
+    function formatNaira(amount) {
+      return "₦" + amount.toLocaleString("en-NG");
+    }
+
+    // Render Products
+    function renderProducts() {
+      const filtered = products.filter(p => currentCategory === "All" || p.category === currentCategory);
+
+      if (filtered.length === 0) {
+        productGrid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--text-muted);">No items found in this category.</div>`;
+        return;
+      }
+
+      productGrid.innerHTML = filtered.map(p => `
+        <article class="product-card">
+          <div class="product-image">
+            <span class="product-tag">${p.tag}</span>
+            <img src="${p.image}" alt="${p.name}" loading="lazy">
+          </div>
+          <div class="product-info">
+            <div class="product-title-row">
+              <h3 class="product-title">${p.name}</h3>
+              <span class="product-price">${formatNaira(p.price)}</span>
+            </div>
+            <p class="product-desc">${p.description}</p>
+            <div class="product-action">
+              <span class="product-cat">${p.category}</span>
+              <button class="add-btn" data-add-to-cart="${p.id}" type="button">Add to Order</button>
+            </div>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    // Cart Logic
+    function updateCart() {
+      const quantity = [...cart.values()].reduce((sum, item) => sum + item.quantity, 0);
+      const total = [...cart.values()].reduce((sum, item) => sum + item.price * item.quantity, 0);
+      document.getElementById("headerCartCount").textContent = quantity;
+      cartTotalEl.textContent = formatNaira(total);
+      checkoutBtn.disabled = cart.size === 0;
+      cartItemsEl.innerHTML = cart.size ? [...cart.values()].map(item => `
+        <div class="cart-line"><div class="cart-line-info"><strong>${item.name}</strong><small>${formatNaira(item.price)} each</small></div>
+        <div class="quantity-control"><button type="button" data-quantity="-1" data-id="${item.id}" aria-label="Remove one ${item.name}">−</button><span>${item.quantity}</span><button type="button" data-quantity="1" data-id="${item.id}" aria-label="Add one ${item.name}">+</button></div></div>`).join("") : '<p class="cart-empty">Your cart is waiting for something delicious.</p>';
+    }
+
+    function openCart() {
+      cartDrawer.classList.add("open"); cartBackdrop.classList.add("open");
+      cartDrawer.setAttribute("aria-hidden", "false"); document.body.style.overflow = "hidden";
+    }
+    function closeCart() {
+      cartDrawer.classList.remove("open"); cartBackdrop.classList.remove("open");
+      cartDrawer.setAttribute("aria-hidden", "true"); document.body.style.overflow = "";
+    }
+
+    // Event Listeners
+    productGrid.addEventListener("click", event => {
+      const button = event.target.closest("[data-add-to-cart]");
+      if (!button) return;
+      const product = products.find(item => item.id === button.dataset.addToCart);
+      const current = cart.get(product.id);
+      cart.set(product.id, { ...product, quantity: current ? current.quantity + 1 : 1 });
+      updateCart(); button.textContent = "Added ✓";
+      setTimeout(() => { button.textContent = "Add to Order"; }, 900);
+    });
+
+    cartItemsEl.addEventListener("click", event => {
+      const button = event.target.closest("[data-quantity]");
+      if (!button) return;
+      const item = cart.get(button.dataset.id);
+      item.quantity += Number(button.dataset.quantity);
+      if (item.quantity <= 0) cart.delete(item.id);
+      updateCart();
+    });
+
+    document.getElementById("cartTrigger").addEventListener("click", openCart);
+    if (floatingCart) floatingCart.addEventListener("click", openCart);
+    document.getElementById("cartClose").addEventListener("click", closeCart);
+    cartBackdrop.addEventListener("click", closeCart);
+    document.addEventListener("keydown", event => { if (event.key === "Escape") closeCart(); });
+
+    checkoutBtn.addEventListener("click", () => {
+      if (!cart.size) return;
+      const lines = [...cart.values()].map(item => `${item.quantity} × ${item.name} — ${formatNaira(item.price * item.quantity)}`);
+      const total = [...cart.values()].reduce((sum, item) => sum + item.price * item.quantity, 0);
+      const message = `Hello Chopwell Kitchen! I'd like to order:\n${lines.join("\n")}\n\nSubtotal: ${formatNaira(total)}`;
+      window.open(`https://wa.me/2347012535275?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+    });
+
+    document.getElementById("mobileMenuBtn").addEventListener("click", event => {
+      const open = document.getElementById("siteNav").classList.toggle("mobile-open");
+      event.currentTarget.setAttribute("aria-expanded", String(open));
+      event.currentTarget.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    });
+
+    // Category Filter Click
+    categoryBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        categoryBtns.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        currentCategory = btn.dataset.category;
+        renderProducts();
+      });
+    });
+
+    // Initialize
+    renderProducts();
+    updateCart();
+  </script>
+</body>
+</html>

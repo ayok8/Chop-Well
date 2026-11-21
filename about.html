@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#a63d22" />
+  <meta name="description" content="About Chopwell Kitchen — Our story, our passion for authentic Nigerian flavours, and why we cook with love. Unlimited Taste." />
+  <title>About Us | Chopwell Kitchen</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,700;1,700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ===== BASE & VARIABLES (polished theme) ===== */
+    :root {
+      --primary: #a63d22;
+      --primary-light: #7f2c19;
+      --gold: #c99a45;
+      --gold-bright: #f1d59a;
+      --dark-bg: #211b17;
+      --light-bg: #fbf8f2;
+      --text-dark: #29231e;
+      --text-muted: #74695e;
+      --border-color: #e8dfd2;
+      --success: #25d366;
+      --shadow: 0 16px 40px rgba(48, 34, 22, .1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--light-bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ===== HEADER ===== */
+    .site-header {
+      width: min(1180px, calc(100% - 40px));
+      margin: 16px auto 0;
+      padding: 14px 24px;
+      border: 1px solid rgba(41, 35, 30, .08);
+      border-radius: 16px;
+      background: rgba(251, 248, 242, .96);
+      box-shadow: 0 6px 24px rgba(48, 34, 22, .06);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 12px;
+      z-index: 100;
+    }
+    .logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.9rem;
+      letter-spacing: 1.5px;
+      color: var(--text-dark);
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+    .logo span {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 2.4px;
+      color: var(--text-muted);
+      font-weight: 700;
+      margin-top: 2px;
+    }
+    .nav-links { display: flex; gap: 30px; align-items: center; }
+    .nav-links a { font-weight: 500; font-size: .88rem; color: var(--text-dark); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--primary-light); }
+    .header-order-btn {
+      background-color: var(--primary);
+      color: white !important;
+      padding: 8px 20px;
+      border-radius: 8px;
+      font-weight: 700 !important;
+      font-size: 0.85rem !important;
+      transition: background 0.2s;
+    }
+    .header-order-btn:hover { background-color: var(--primary-light); }
+    .cart-trigger {
+      display: inline-flex; align-items: center; gap: 8px; border: 0; cursor: pointer;
+      padding: 9px 15px; border-radius: 8px; color: white; background: var(--primary);
+      font: 700 .88rem 'DM Sans', sans-serif;
+    }
+    .cart-trigger .count { min-width: 22px; height: 22px; display: grid; place-items: center; padding: 0 5px; border-radius: 50%; background: var(--gold-bright); color: var(--text-dark); }
+    .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; color: var(--text-dark); cursor: pointer; }
+
+    /* ===== HERO / PAGE HEADER ===== */
+    .page-hero {
+      width: min(1180px, calc(100% - 40px));
+      margin: 22px auto 0;
+      padding: clamp(48px, 7vw, 88px) 7%;
+      border-radius: 20px;
+      background-color: #48271c;
+      background-image: linear-gradient(90deg, rgba(35, 23, 17, .93) 0%, rgba(35, 23, 17, .74) 50%, rgba(35, 23, 17, .25) 100%), url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1800&q=85');
+      background-size: cover;
+      background-position: center 50%;
+      color: #fffaf2;
+      box-shadow: 0 18px 40px rgba(48, 34, 22, .16);
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero-content { max-width: 720px; position: relative; z-index: 2; }
+    .page-hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.8rem, 10vw, 7rem);
+      line-height: .9;
+      letter-spacing: 0;
+      margin-bottom: 12px;
+    }
+    .page-hero h1 span { color: var(--gold-bright); }
+    .page-hero p {
+      font-size: 1.08rem;
+      max-width: 540px;
+      color: rgba(255, 250, 242, .86);
+      margin-top: 16px;
+    }
+    .page-hero .status-badge {
+      display: inline-flex; align-items: center;
+      padding: 7px 13px; border-radius: 30px;
+      border: 1px solid rgba(241, 213, 154, .55);
+      background: rgba(255, 255, 255, .1);
+      color: #f7e7c7;
+      font-size: .7rem; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .status-dot {
+      width: 8px; height: 8px; background: #8ec68a; border-radius: 50%; margin-right: 8px;
+      animation: pulse-dot 2s infinite;
+    }
+    @keyframes pulse-dot {
+      0% { box-shadow: 0 0 0 0 rgba(142, 198, 138, .7); }
+      70% { box-shadow: 0 0 0 8px rgba(142, 198, 138, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(142, 198, 138, 0); }
+    }
+
+    /* ===== SECTION GENERAL ===== */
+    .section { padding: 80px 5%; max-width: 1240px; margin: 0 auto; }
+    .section-header { margin-bottom: 40px; }
+    .section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      letter-spacing: -1px;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+    }
+    .section-header p { color: var(--text-muted); font-size: 1rem; max-width: 600px; }
+
+    /* ===== STORY GRID ===== */
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .story-image {
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(48, 34, 22, .12);
+      border: 1px solid var(--border-color);
+      aspect-ratio: 4 / 3;
+    }
+    .story-image img { width: 100%; height: 100%; object-fit: cover; }
+    .story-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      margin-bottom: 18px;
+      line-height: 1.15;
+    }
+    .story-text p { color: var(--text-muted); margin-bottom: 16px; font-size: 1.02rem; line-height: 1.7; }
+    .story-text .highlight { color: var(--primary); font-weight: 700; }
+    .story-signature {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .story-signature .avatar {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: var(--gold-bright); display: grid; place-items: center;
+      font-size: 1.4rem; border: 2px solid var(--primary);
+    }
+    .story-signature small { display: block; color: var(--text-muted); font-size: .82rem; }
+    .story-signature strong { font-size: .95rem; }
+
+    /* ===== VALUES ===== */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 10px;
+    }
+    .value-card {
+      background: #fff;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 30px 26px;
+      box-shadow: 0 5px 16px rgba(48, 34, 22, .05);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .value-card:hover { transform: translateY(-4px); box-shadow: 0 14px 28px rgba(48, 34, 22, .1); }
+    .value-icon {
+      width: 54px; height: 54px; border-radius: 14px;
+      background: var(--light-bg); border: 1px solid var(--border-color);
+      display: grid; place-items: center; font-size: 1.6rem; margin-bottom: 18px;
+    }
+    .value-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+    }
+    .value-card p { color: var(--text-muted); font-size: .92rem; line-height: 1.65; }
+
+    /* ===== STATS BAR ===== */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 50px;
+      background: #fff;
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 8px 24px rgba(48, 34, 22, .05);
+    }
+    .stat-item { text-align: center; }
+    .stat-item strong {
+      display: block;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.6rem;
+      color: var(--primary);
+      line-height: 1;
+    }
+    .stat-item span { font-size: .8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: .5px; }
+
+    /* ===== CTA BANNER ===== */
+    .cta-banner {
+      margin: 20px auto 0;
+      width: min(1180px, calc(100% - 40px));
+      background: linear-gradient(120deg, #f2e7d4, #f7edd9);
+      border-radius: 20px;
+      padding: clamp(30px, 5vw, 58px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      border: 1px solid var(--border-color);
+    }
+    .cta-banner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      margin-bottom: 8px;
+    }
+    .cta-banner p { color: var(--text-muted); max-width: 480px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 14px 28px; font-weight: 700; font-size: 1rem;
+      border-radius: 8px; cursor: pointer; transition: all 0.2s; border: none;
+    }
+    .btn-primary { background: var(--primary); color: white; }
+    .btn-primary:hover { background: var(--primary-light); }
+    .btn-whatsapp { background: var(--success); color: white; }
+    .btn-whatsapp:hover { background: #1ebe5d; }
+    .btn svg { width: 20px; height: 20px; margin-right: 8px; }
+
+    /* ===== FOOTER ===== */
+    .site-footer {
+      background-color: var(--dark-bg);
+      color: #aaa;
+      padding: 50px 5% 30px;
+      margin-top: 60px;
+    }
+    .footer-content {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px; margin-bottom: 40px;
+    }
+    .footer-brand h2 {
+      font-family: 'Bebas Neue', sans-serif; font-size: 2rem;
+      color: var(--gold-bright); letter-spacing: 1px; margin-bottom: 10px;
+    }
+    .footer-brand p { font-size: 0.9rem; line-height: 1.8; }
+    .footer-links h3, .footer-contact h3 {
+      color: white; font-size: 1.1rem; margin-bottom: 20px; font-family: 'Playfair Display', serif;
+    }
+    .footer-links a { display: block; color: #aaa; margin-bottom: 10px; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold-bright); }
+    .footer-contact p { margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+    .footer-bottom { text-align: center; border-top: 1px solid rgba(255, 255, 255, .14); padding-top: 20px; font-size: 0.8rem; }
+
+    /* ===== CART DRAWER (same as homepage) ===== */
+    .cart-backdrop { position: fixed; inset: 0; z-index: 200; background: rgba(28,15,10,.56); opacity: 0; visibility: hidden; transition: .25s; }
+    .cart-backdrop.open { opacity: 1; visibility: visible; }
+    .cart-drawer {
+      position: fixed; z-index: 201; top: 0; right: 0; width: min(460px, 100%); height: 100dvh;
+      display: flex; flex-direction: column; padding: 24px; background: #fffaf2;
+      border-left: 1px solid var(--border-color); box-shadow: -12px 0 40px rgba(35,18,9,.2);
+      transform: translateX(105%); transition: transform .3s cubic-bezier(.2,.8,.2,1);
+    }
+    .cart-drawer.open { transform: translateX(0); }
+    .cart-head, .cart-line, .cart-total-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .cart-head { padding-bottom: 18px; border-bottom: 1px solid var(--border-color); }
+    .cart-head h2 { font: 700 1.6rem 'Playfair Display', serif; }
+    .cart-close { width: 40px; height: 40px; border: 1px solid var(--border-color); border-radius: 10px; background: white; font-size: 1.4rem; cursor: pointer; }
+    .cart-items { flex: 1; overflow-y: auto; padding: 12px 0; }
+    .cart-empty { padding: 42px 10px; color: var(--text-muted); text-align: center; }
+    .cart-line { padding: 14px 0; border-bottom: 1px solid var(--border-color); }
+    .cart-line-info { flex: 1; }
+    .cart-line-info strong { display: block; }
+    .cart-line-info small { color: var(--text-muted); }
+    .quantity-control { display: flex; align-items: center; gap: 9px; }
+    .quantity-control button { width: 30px; height: 30px; border: 1px solid var(--border-color); border-radius: 9px; background: white; cursor: pointer; font-weight: 700; }
+    .cart-footer { padding-top: 16px; border-top: 1px solid var(--border-color); }
+    .cart-total-row { margin-bottom: 16px; font-size: 1.1rem; font-weight: 800; }
+    .checkout-btn { width: 100%; padding: 15px; border: 0; border-radius: 8px; background: var(--primary); color: white; font: 700 1rem 'DM Sans', sans-serif; cursor: pointer; }
+    .checkout-btn:disabled { opacity: .5; cursor: not-allowed; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .story-grid { grid-template-columns: 1fr; gap: 30px; }
+      .values-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .cta-banner { flex-direction: column; text-align: center; align-items: stretch; }
+      .cta-banner p { margin: 0 auto; }
+    }
+    @media (max-width: 768px) {
+      .site-header { width: calc(100% - 24px); padding: 12px 16px; }
+      .nav-links { display: none; position: absolute; top: calc(100% + 8px); left: 16px; right: 16px; flex-direction: column; align-items: stretch; gap: 0; padding: 8px; border: 1px solid var(--border-color); border-radius: 16px; background: #fffaf2; box-shadow: var(--shadow); }
+      .nav-links.mobile-open { display: flex; }
+      .nav-links a { padding: 12px; }
+      .cart-trigger { display: none; }
+      .mobile-menu-btn { display: block; }
+      .page-hero { width: calc(100% - 24px); padding: 58px 7%; }
+      .page-hero p { margin-top: 14px; }
+      .section { padding: 60px 6%; }
+      .values-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 520px) {
+      .stats-bar { grid-template-columns: 1fr; }
+      .page-hero h1 { font-size: clamp(3rem, 16vw, 5rem); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER (same as homepage) -->
+  <header class="site-header">
+    <a href="index.html" class="logo">
+      CHOPWELL
+      <span>Kitchen Spot</span>
+    </a>
+    <nav class="nav-links" id="siteNav">
+      <a href="menu.html">Menu</a>
+      <a href="juices.html">Juices</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="menu.html" class="header-order-btn">Order Now</a>
+    </nav>
+    <button class="cart-trigger" id="cartTrigger" type="button" aria-label="Open shopping cart">Cart <span class="count" id="headerCartCount">0</span></button>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <div class="status-badge">
+        <span class="status-dot"></span> Made with love · Served fresh
+      </div>
+      <h1>OUR <span>STORY</span></h1>
+      <p>Chopwell Kitchen started with a simple belief: good food should feel like home. We're here to bring authentic Nigerian flavours to your table — one delicious meal at a time.</p>
+    </div>
+  </section>
+
+  <!-- STORY SECTION -->
+  <section class="section">
+    <div class="story-grid">
+      <div class="story-image">
+        <img src="https://i.pinimg.com/1200x/9b/9b/53/9b9b536ddd1c95c66180a5cb80411dfc.jpg " alt="Chopwell Kitchen preparing a fresh meal" loading="lazy">
+      </div>
+      <div class="story-text"
+        <h2>From a home kitchen to your table</h2>
+        <p>What began as a small family kitchen in Lagos is now <span class="highlight">Chopwell Kitchen</span> — a place where every pot tells a story. We grew up surrounded by the aroma of simmering stews, the sizzle of peppered chicken, and the joy of sharing a meal with people you love.</p>
+        <p>That's the feeling we want to pass on to you. Every dish we make is prepared the way our mothers and grandmothers taught us — with patience, with care, and with a whole lot of flavour. Nothing is rushed, nothing is fake. Just <span class="highlight">real Nigerian food</span>, made the right way.</p>
+        <p>And because a great meal deserves a great drink, we squeeze our fruit juices fresh daily. Watermelon, orange, pineapple, beetroot — whatever you're craving, we've got it. All fruits available, always.</p>
+        <div class="story-signature">
+          <div class="avatar">👩🏾‍🍳</div>
+          <div>
+            <strong>The Chopwell Family</strong>
+            <small>Founders & Head Cooks</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-bar">
+      <div class="stat-item"><strong>500+</strong><span>Happy Customers</span></div>
+      <div class="stat-item"><strong>15+</strong><span>Menu Favourites</span></div>
+      <div class="stat-item"><strong>100%</strong><span>Fresh Ingredients</span></div>
+      <div class="stat-item"><strong>7</strong><span>Days a Week</span></div>
+    </div>
+  </section>
+
+  <!-- VALUES SECTION -->
+  <section class="section" style="padding-top: 20px;">
+    <div class="section-header">
+      <h2>What we stand for</h2>
+      <p>Three simple promises that guide everything we do — from the market to your doorstep.</p>
+    </div>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">🍲</div>
+        <h3>Authentic Taste</h3>
+        <p>We cook Nigerian classics the traditional way — rich stews, smokey jollof, and soups that taste like home. No shortcuts, no compromise.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🌿</div>
+        <h3>Fresh Always</h3>
+        <p>Every meal is made fresh daily. Our juices are squeezed to order, and our ingredients are sourced with care. Freshness you can taste.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">❤️</div>
+        <h3>Made with Love</h3>
+        <p>Food is more than fuel — it's comfort, culture, and connection. We put love into every pot, so every bite feels special.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <div class="cta-banner">
+    <div>
+      <h2>Ready to taste the difference?</h2>
+      <p>Browse our menu, pick your favourites, and we'll take care of the rest. Order via WhatsApp, call us, or find us on Chowdeck.</p>
+    </div>
+    <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+      <a href="menu.html" class="btn btn-primary">Explore Menu</a>
+      <a href="https://wa.me/2347012535275?text=Hello%20Chopwell%20Kitchen%2C%20I%20would%20like%20to%20place%20an%20order." class="btn btn-whatsapp" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Order on WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER (same as homepage) -->
+  <footer class="site-footer" id="contact">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h2>CHOPWELL KITCHEN</h2>
+        <p>Unlimited Taste. Authentic Nigerian Flavors. Made with love and served fresh.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <a href="menu.html">Our Menu</a>
+        <a href="juices.html">Fresh Juices</a>
+        <a href="about.html">About Us</a>
+      </div>
+      <div class="footer-contact">
+        <h3>Order With Us</h3>
+        <p><span>📞</span> <a href="tel:+2347012535275" style="color: #aaa;">07012535275</a></p>
+        <p><span>💬</span> <a href="https://wa.me/2347012535275" style="color: #aaa;" target="_blank" rel="noopener">WhatsApp Us</a></p>
+        <p><span>🛵</span> Available on Chowdeck</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Chopwell Kitchen Spot. All rights reserved.</p>
+      <p style="margin-top: 5px; color: var(--gold-bright);">"Eat good food 🍱 Omo, the vegetables give life!"</p>
+    </div>
+  </footer>
+
+  <!-- CART DRAWER (same structure) -->
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle" aria-hidden="true">
+    <div class="cart-head"><h2 id="cartTitle">Your Cart</h2><button class="cart-close" id="cartClose" type="button" aria-label="Close cart">×</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer"><div class="cart-total-row"><span>Subtotal</span><span id="cartTotal">₦0</span></div><button class="checkout-btn" id="checkoutBtn" type="button" disabled>Checkout on WhatsApp</button></div>
+  </aside>
+
+  <!-- JAVASCRIPT (cart functionality shared with homepage) -->
+  <script>
+    // Shared product catalogue (same as homepage) – needed for cart persistence
+    const products = [
+      {id:"vegetable-soup", name:"Vegetable Soup", category:"Soups", price:8000, description:"A rich, hearty Nigerian classic with your choice of protein.", tag:"HOUSE FAVOURITE", image:"https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80"},
+      {id:"party-jollof", name:"Party Jollof Rice", category:"Sides", price:3500, description:"Smokey, party-style Nigerian jollof rice cooked to perfection.", tag:"POPULAR", image:"https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80"},
+      {id:"tomato-stew", name:"Fresh Tomato Stew", category:"Stew", price:9500, description:"Fresh tomato stew. Choose beef, goat meat, fresh fish or dry fish.", tag:"MADE FRESH", image:"https://images.unsplash.com/photo-1476124369491-e7add3f3965e?auto=format&fit=crop&w=800&q=80"},
+      {id:"watermelon-juice", name:"Watermelon Juice", category:"Juices", price:2700, description:"Refreshing watermelon juice, freshly prepared.", tag:"ALL FRUITS AVAILABLE", image:"https://images.unsplash.com/photo-1525385133512-2f3bdd039054?auto=format&fit=crop&w=800&q=80"},
+      {id:"pepper-chicken", name:"Pepper Chicken", category:"Other", price:10000, description:"Peppery, flavour-packed chicken. Portion enough for two.", tag:"ENOUGH FOR 2", image:"https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=800&q=80"},
+      {id:"rice-beans", name:"Rice and Beans", category:"Sides", price:2000, description:"A satisfying everyday favourite, simply delicious.", tag:"COMFORT FOOD", image:"https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80"}
+    ];
+
+    const cart = new Map();
+
+    const cartDrawer = document.getElementById("cartDrawer");
+    const cartBackdrop = document.getElementById("cartBackdrop");
+    const cartItemsEl = document.getElementById("cartItems");
+    const cartTotalEl = document.getElementById("cartTotal");
+    const checkoutBtn = document.getElementById("checkoutBtn");
+
+    function formatNaira(amount) {
+      return "₦" + amount.toLocaleString("en-NG");
+    }
+
+    function updateCart() {
+      const quantity = [...cart.values()].reduce((sum, item) => sum + item.quantity, 0);
+      const total = [...cart.values()].reduce((sum, item) => sum + item.price * item.quantity, 0);
+      document.getElementById("headerCartCount").textContent = quantity;
+      cartTotalEl.textContent = formatNaira(total);
+      checkoutBtn.disabled = cart.size === 0;
+      cartItemsEl.innerHTML = cart.size ? [...cart.values()].map(item => `
+        <div class="cart-line"><div class="cart-line-info"><strong>${item.name}</strong><small>${formatNaira(item.price)} each</small></div>
+        <div class="quantity-control"><button type="button" data-quantity="-1" data-id="${item.id}" aria-label="Remove one ${item.name}">−</button><span>${item.quantity}</span><button type="button" data-quantity="1" data-id="${item.id}" aria-label="Add one ${item.name}">+</button></div></div>`).join("") : '<p class="cart-empty">Your cart is waiting for something delicious.</p>';
+    }
+
+    function openCart() {
+      cartDrawer.classList.add("open"); cartBackdrop.classList.add("open");
+      cartDrawer.setAttribute("aria-hidden", "false"); document.body.style.overflow = "hidden";
+    }
+    function closeCart() {
+      cartDrawer.classList.remove("open"); cartBackdrop.classList.remove("open");
+      cartDrawer.setAttribute("aria-hidden", "true"); document.body.style.overflow = "";
+    }
+
+    // Event listeners
+    cartItemsEl.addEventListener("click", event => {
+      const button = event.target.closest("[data-quantity]");
+      if (!button) return;
+      const item = cart.get(button.dataset.id);
+      if (!item) return;
+      item.quantity += Number(button.dataset.quantity);
+      if (item.quantity <= 0) cart.delete(item.id);
+      updateCart();
+    });
+
+    document.getElementById("cartTrigger").addEventListener("click", openCart);
+    document.getElementById("cartClose").addEventListener("click", closeCart);
+    cartBackdrop.addEventListener("click", closeCart);
+    document.addEventListener("keydown", event => { if (event.key === "Escape") closeCart(); });
+
+    checkoutBtn.addEventListener("click", () => {
+      if (!cart.size) return;
+      const lines = [...cart.values()].map(item => `${item.quantity} × ${item.name} — ${formatNaira(item.price * item.quantity)}`);
+      const total = [...cart.values()].reduce((sum, item) => sum + item.price * item.quantity, 0);
+      const message = `Hello Chopwell Kitchen! I'd like to order:\n${lines.join("\n")}\n\nSubtotal: ${formatNaira(total)}`;
+      window.open(`https://wa.me/2347012535275?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+    });
+
+    document.getElementById("mobileMenuBtn").addEventListener("click", event => {
+      const open = document.getElementById("siteNav").classList.toggle("mobile-open");
+      event.currentTarget.setAttribute("aria-expanded", String(open));
+      event.currentTarget.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    });
+
+    // Load cart from sessionStorage if present (so cart persists between pages)
+    (function loadCartFromStorage() {
+      try {
+        const stored = sessionStorage.getItem("chopwellCart");
+        if (stored) {
+          const items = JSON.parse(stored);
+          items.forEach(({ id, quantity }) => {
+            const product = products.find(p => p.id === id);
+            if (product && quantity > 0) {
+              cart.set(id, { ...product, quantity });
+            }
+          });
+        }
+      } catch (e) { /* ignore */ }
+      updateCart();
+    })();
+
+    // Save cart to sessionStorage on changes
+    function saveCartToStorage() {
+      const items = [...cart.values()].map(({ id, quantity }) => ({ id, quantity }));
+      try { sessionStorage.setItem("chopwellCart", JSON.stringify(items)); } catch (e) {}
+    }
+
+    // Patch updateCart to also save
+    const originalUpdateCart = updateCart;
+    updateCart = function() {
+      originalUpdateCart.call(this);
+      saveCartToStorage();
+    };
+  </script>
+</body>
+</html>
